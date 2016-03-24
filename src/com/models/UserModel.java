@@ -172,7 +172,7 @@ public class UserModel {
 		return null;
 	}
 	
-	public static void unFollowFriend(Integer id1, Integer id2) {
+	public static UserModel unFollowFriend(Integer id1, Integer id2) {
 		try {
 			Connection conn = DBConnection.getActiveConnection();
 			String sql = "delete from `follow` where `follower` = ? and `following`=? ";
@@ -184,12 +184,12 @@ public class UserModel {
 		
 			 stmt.executeUpdate();
 			
-			//return null;
+			return null;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	//	return null;
+		return null;
 		}
 	
 	public static UserModel getPosition(Integer id) {

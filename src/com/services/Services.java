@@ -83,25 +83,23 @@ public class Services {
 		
 		UserModel user = UserModel.followFriend(id,id2);
 		JSONObject json = new JSONObject();
-		json.put("name", user.getName());
+		json.put(" successfully follow ", user.getName());
       
 		return json.toJSONString();
 	}
 	
-	
-	
-	
-	
+
 	
 	@POST
 	@Path("/unfollow")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String unFollow(@FormParam("id") int id1
-		,@FormParam("id2") int id2	) {
-		 UserModel.unFollowFriend(id1,id2);
+	public String unFollow(@FormParam("id") int id1 ,@FormParam("id2") int id2	) {
+		
+		UserModel user = UserModel.unFollowFriend(id1,id2);
 		
 		JSONObject json = new JSONObject();
 		
+		json.put(" successfully follow ",user.getName());
 		return json.toJSONString();
 	}
 	
